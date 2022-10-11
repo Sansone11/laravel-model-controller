@@ -1,13 +1,19 @@
 @extends('layout.app')
 
-@section('mataTitle','Movie')
+@section('mataTitle', 'Movie')
 
 @section('content')
 
-<h1>Movie-list</h1>
+    <h1>Movie-list</h1>
 
-<p>{{$movies['title']}}</p>
-<p>{{$movies['original_title']}}</p>
-<p>{{$movies['nationality']}}</p>
-<p>{{$movies['date']}}</p>
-<p>{{$movies['vote']}}</p>
+    @foreach ($movies as $movie)
+    <div>
+        <h3>{{ $movie->title }}</h3>
+        <p>{{ $movie->original_title }}</p>
+        <p>{{ $movie->nationality}}</p>
+        <p>{{ $movie->date}}</p>
+        <p>{{ $movie->vote}}</p>
+    </div> 
+    @endforeach 
+        
+@endsection

@@ -11,7 +11,7 @@ class PageController extends Controller
 
         $movies = Movie::all();
         // dd( $movies);
-        return view('movie',compact('title','original_title','nationality', 'date','vote'));
+        return view('movie',compact('movies'));
        
     }
 }
